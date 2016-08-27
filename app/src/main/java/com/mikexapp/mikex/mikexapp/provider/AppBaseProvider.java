@@ -7,5 +7,4 @@ import android.content.ContentProvider;
  */
 
 public abstract class AppBaseProvider extends ContentProvider{
-
 }
