@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MikexAPP</string>
+    <string name="first_step">This is a first step!We gonna do more!</string>
+    <string name="test_ndk">TestNdk</string>
+</resources>
