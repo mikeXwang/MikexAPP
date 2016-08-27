@@ -1,5 +1,13 @@
 <resources>
-    <string name="app_name">MikexAPP</string>
+    <string name="app_name">MikexApp</string>
     <string name="first_step">This is a first step!We gonna do more!</string>
     <string name="test_ndk">TestNdk</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="installed_app">Here are installed app</string>
+    <string name="sd_card_app">Here are apps in sd card</string>
+    <string name="remote_app">Here are remote app</string>
+
+    <string name="title_activity_app_start">AppStartActivity</string>
+    <string name="start_app">  Start MikexApp  </string>
 </resources>
