@@ -11,6 +11,7 @@ import com.mikexapp.mikex.mikexapp.R;
 public class AppStartActivity extends Activity {
 
     private Button mBtnStartApp;
+    private Button mBtnStartGL;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +25,7 @@ public class AppStartActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(AppStartActivity.this,HomeActivity.class);
+                intent.setClass(AppStartActivity.this,HomeAppActivity.class);
                 startActivity(intent);
                 finish();
             }

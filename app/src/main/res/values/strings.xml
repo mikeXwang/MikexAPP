@@ -9,5 +9,6 @@
     <string name="remote_app">Here are remote app</string>
 
     <string name="title_activity_app_start">AppStartActivity</string>
-    <string name="start_app">  Start MikexApp  </string>
+    <string name="start_mikex_app_box">Start MikexApp</string>
+    <string name="start_mikex_app_gl">Start MikexGL</string>
 </resources>

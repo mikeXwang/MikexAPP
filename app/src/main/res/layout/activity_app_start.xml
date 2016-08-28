@@ -10,13 +10,29 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
+
+        <Button
+            android:id="@+id/btn_start_gl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="44dp"
+            android:layout_marginStart="44dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/start_mikex_app_gl"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/btn_start_app"
+            android:layout_toEndOf="@+id/btn_start_app" />
+
         <Button
             android:id="@+id/btn_start_app"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="@string/start_app"
-            android:textColor="@color/text_orange"
-            android:background="@color/colorPrimary"/>
+            android:text="@string/start_mikex_app_box"
+            android:background="@color/colorPrimary"
+            android:layout_marginLeft="68dp"
+            android:layout_marginStart="68dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
     </RelativeLayout>
 </RelativeLayout>

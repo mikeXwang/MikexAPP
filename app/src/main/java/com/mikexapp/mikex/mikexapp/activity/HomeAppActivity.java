@@ -23,7 +23,7 @@ import com.mikexapp.mikex.mikexapp.fragment.StoreCardApkFragment;
 
 import java.util.ArrayList;
 
-public class HomeActivity extends AppBaseActivity implements ViewPager.OnPageChangeListener{
+public class HomeAppActivity extends AppBaseActivity implements ViewPager.OnPageChangeListener{
     private ViewPager mViewPager;
     private PagerAdapter mPageAdapter;
     private ArrayList<Fragment> mFragmentList;
