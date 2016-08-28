@@ -2,7 +2,7 @@ package com.mikexapp.mikex.mikexapp.model;
 
 /**
  * Created by mike on 16-8-29.
- * Model类,用来存储应用程序信息
+ * Model,used for describe app info
  */
 
 
