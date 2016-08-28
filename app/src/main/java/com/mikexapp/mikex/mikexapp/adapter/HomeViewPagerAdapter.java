@@ -33,13 +33,13 @@ public class HomeViewPagerAdapter extends PagerAdapter {
         String tag = "";
         switch (position) {
             case 1:
-                tag = "FirstFragment";
+                tag = "InstalledApkFragment";
                 break;
             case 2:
-                tag = "SecondFragment";
+                tag = "RemoteApkFragment";
                 break;
             case 3:
-                tag = "ThirdFragment";
+                tag = "StoreCardApkFragment";
                 break;
             default:
                 break;
