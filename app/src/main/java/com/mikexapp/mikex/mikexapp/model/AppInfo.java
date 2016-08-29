@@ -61,4 +61,5 @@ public class AppInfo {
     public void setVersionName(String versionName) {
         this.versionName = versionName;
     }
+
 }

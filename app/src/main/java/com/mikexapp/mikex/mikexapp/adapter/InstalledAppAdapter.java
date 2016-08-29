@@ -57,6 +57,8 @@ public class InstalledAppAdapter extends BaseAdapter {
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
+                    //此处为应用启动的临时实现
                     AppInfo appinfo = (AppInfo) getItem(position);
                     startAppByPackageName(appinfo.getPkgName());
                 }
