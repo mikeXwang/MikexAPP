@@ -8,6 +8,6 @@ import android.widget.BaseAdapter;
  * Created by mike on 16-8-27.
  */
 
-public abstract class AppBaseAdapter extends BaseAdapter{
+public abstract class AppBaseAdapter extends BaseAdapter {
 
 }

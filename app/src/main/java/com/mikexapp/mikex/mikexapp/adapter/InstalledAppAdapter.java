@@ -1,17 +1,21 @@
 package com.mikexapp.mikex.mikexapp.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mikexapp.mikex.mikexapp.R;
 import com.mikexapp.mikex.mikexapp.model.AppInfo;
 
 import java.util.List;
+
+import static android.R.attr.id;
 
 /**
  * Created by mike on 16-8-29.
@@ -44,12 +48,19 @@ public class InstalledAppAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
         View view = convertView;
 
         if(view == null) {
             view = mLayoutInflater.inflate(R.layout.item_installed_app, null);
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AppInfo appinfo = (AppInfo) getItem(position);
+                    startAppByPackageName(appinfo.getPkgName());
+                }
+            });
             viewHolder = new ViewHolder();
             viewHolder.mImageViewHolder = (ImageView) view.findViewById(R.id.iv_item_installed_app);
             viewHolder.mTextViewHolder = (TextView) view.findViewById(R.id.tv_item_installed_app);
@@ -63,6 +74,15 @@ public class InstalledAppAdapter extends BaseAdapter {
         viewHolder.mImageViewHolder.setImageDrawable(titleData.getAppIcon());
 
         return view;
+    }
+
+    private void startAppByPackageName(String pkgName) {
+        try{
+            Intent intent = mContext.getPackageManager().getLaunchIntentForPackage(pkgName);
+            mContext.startActivity(intent);
+        }catch(Exception e){
+            Toast.makeText(mContext, "没有安装", Toast.LENGTH_LONG).show();
+        }
     }
 
     class ViewHolder {

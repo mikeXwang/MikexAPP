@@ -9,5 +9,5 @@ import android.support.annotation.RequiresApi;
  */
 
 @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
-public class AppBaseFragment extends Fragment{
+public class AppBaseFragment extends Fragment {
 }
