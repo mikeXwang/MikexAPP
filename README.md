@@ -1,5 +1,5 @@
 # MikexApp
-Hi,I am mike,
+Hi,I am Wang Zhibin,
 
 This is an app development frame which we gonna do.
 As far,we still dont know which direction we should take a step.
