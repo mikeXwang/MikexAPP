@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mikexapp.mikex.mikexapp.R;
 import com.mikexapp.mikex.mikexapp.model.AppInfo;
@@ -58,6 +59,7 @@ public class StoreCardAppAdapter extends BaseAdapter {
                     //start uninstalled apps in sdcard.
                     AppInfo appinfo = (AppInfo) getItem(position);
                     startAppByPackageName(appinfo.getPkgName());
+                    Toast.makeText(mContext,"Starting apps without install will coming soon",Toast.LENGTH_LONG).show();
 
                 }
             });

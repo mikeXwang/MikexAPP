@@ -41,7 +41,7 @@
                     android:id="@+id/tv_tab_sd_app"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="SD应用" />
+                    android:text="SD卡中apk文件" />
             </LinearLayout>
 
             <LinearLayout

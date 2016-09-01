@@ -27,7 +27,6 @@ public class AppStartActivity extends Activity {
                 Intent intent = new Intent();
                 intent.setClass(AppStartActivity.this,HomeAppActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
     }
