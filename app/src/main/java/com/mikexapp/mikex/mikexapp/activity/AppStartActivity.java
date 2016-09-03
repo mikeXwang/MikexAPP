@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import com.mikexapp.mikex.mikexapp.R;
 
-public class AppStartActivity extends Activity {
+public class AppStartActivity extends Activity implements View.OnClickListener{
 
     private Button mBtnStartApp;
     private Button mBtnStartGL;
@@ -21,14 +21,27 @@ public class AppStartActivity extends Activity {
 
     private void initView() {
         mBtnStartApp = (Button) findViewById(R.id.btn_start_app);
-        mBtnStartApp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(AppStartActivity.this,HomeAppActivity.class);
-                startActivity(intent);
-            }
-        });
+        mBtnStartApp.setOnClickListener(this);
+        mBtnStartGL = (Button) findViewById(R.id.btn_start_gl);
+        mBtnStartGL.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btn_start_app:
+                Intent intentHomeAppActivity = new Intent();
+                intentHomeAppActivity.setClass(AppStartActivity.this,HomeAppActivity.class);
+                startActivity(intentHomeAppActivity);
+                break;
+            case R.id.btn_start_gl:
+                Intent intentGLActivity = new Intent();
+                intentGLActivity.setClass(AppStartActivity.this,HomeGLActivity.class);
+                startActivity(intentGLActivity);
+                break;
+            default:
+                break;
+        }
     }
 
 }

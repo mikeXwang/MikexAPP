@@ -5,4 +5,5 @@ package com.mikexapp.mikex.mikexapp.interfaces;
  */
 
 public interface AppBaseInterface {
+
 }
