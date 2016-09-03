@@ -11,4 +11,6 @@
     <string name="title_activity_app_start">AppStartActivity</string>
     <string name="start_mikex_app_box">Start MikexApp</string>
     <string name="start_mikex_app_gl">Start MikexGL</string>
+
+    <string name="not_installed">Not been installed</string>
 </resources>

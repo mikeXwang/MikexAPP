@@ -7,6 +7,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +18,11 @@ import android.widget.TextView;
 
 import com.mikexapp.mikex.mikexapp.R;
 import com.mikexapp.mikex.mikexapp.adapter.HomeViewPagerAdapter;
+import com.mikexapp.mikex.mikexapp.fragment.AppBaseFragment;
 import com.mikexapp.mikex.mikexapp.fragment.InstalledAppFragment;
 import com.mikexapp.mikex.mikexapp.fragment.RemoteApkFragment;
 import com.mikexapp.mikex.mikexapp.fragment.StoreCardApkFragment;
+import com.mikexapp.mikex.mikexapp.utils.ConstantsUtils;
 
 import java.util.ArrayList;
 
@@ -44,9 +47,9 @@ public class HomeAppActivity extends AppBaseActivity implements ViewPager.OnPage
     private Integer mViewPagerW = 0;
 
     private static int sWidth = 0;
-    private InstalledAppFragment mInstalledPage;
-    private StoreCardApkFragment mStoreCardPage;
-    private RemoteApkFragment mRemotePage;
+    private InstalledAppFragment mInstalledFragment;
+    private StoreCardApkFragment mStoreCardFragment;
+    private RemoteApkFragment mRemoteFragment;
 
     @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
     @Override
@@ -90,12 +93,36 @@ public class HomeAppActivity extends AppBaseActivity implements ViewPager.OnPage
 
     @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
     private void initFragment() {
-        mInstalledPage = new InstalledAppFragment();
-        mStoreCardPage = new StoreCardApkFragment();
-        mRemotePage = new RemoteApkFragment();
-        mFragmentList.add(mInstalledPage);
-        mFragmentList.add(mStoreCardPage);
-        mFragmentList.add(mRemotePage);
+        /**
+         * appStartTypeBundle indicates the app starting type in each fragment.
+         *
+         * appStartTypeBundle:本地已经安装应用
+         * appStartTypeBundleApk：apk文件启动
+         * appStartTypeBundleRemote：远程启动
+         *
+         * ps：此处如果使用同一个变量来执行，会出错，初始化之后appStartTypeBundle的值为2
+         * 还未弄清除原因
+         *
+         */
+        Bundle appStartTypeBundle = new Bundle();
+
+        appStartTypeBundle.putInt(ConstantsUtils.START_TYPE,ConstantsUtils.START_TYPE_PACKAGE_NAME);
+        mInstalledFragment = new InstalledAppFragment();
+        mInstalledFragment.setArguments(appStartTypeBundle);
+
+        Bundle appStartTypeBundleApk = new Bundle();
+        appStartTypeBundleApk.putInt(ConstantsUtils.START_TYPE,ConstantsUtils.START_TYPE_FILE_PATH);
+        mStoreCardFragment = new StoreCardApkFragment();
+        mStoreCardFragment.setArguments(appStartTypeBundleApk);
+
+        Bundle appStartTypeBundleRemote = new Bundle();
+        appStartTypeBundleRemote.putInt(ConstantsUtils.START_TYPE,ConstantsUtils.START_TYPE_NET_PATH);
+        mRemoteFragment = new RemoteApkFragment();
+        mRemoteFragment.setArguments(appStartTypeBundleRemote);
+
+        mFragmentList.add(mInstalledFragment);
+        mFragmentList.add(mStoreCardFragment);
+        mFragmentList.add(mRemoteFragment);
 
         mPageAdapter = new HomeViewPagerAdapter(getFragmentManager(),mFragmentList);
         mViewPager.setAdapter(mPageAdapter);
